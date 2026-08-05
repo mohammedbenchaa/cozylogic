@@ -1,6 +1,6 @@
 {
-    "name": "cozy_mystery",
-    "short_name": "cozy_mystery",
+    "name": "Cozy Logic Grid Puzzles",
+    "short_name": "Cozy Logic",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
