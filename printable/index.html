@@ -204,6 +204,18 @@
     border: 1.5px dashed #d4cec5;
     border-radius: 3px;
   }
+  .grid-table .cell.pad {
+    background: #f5f2ed;
+  }
+  .grid-table .cell.pad::after {
+    border: none;
+  }
+  .cat-row-label {
+    font-weight: bold !important;
+    color: var(--text);
+    font-size: 0.82rem;
+    vertical-align: middle !important;
+  }
   .cat-header {
     font-weight: bold;
     color: var(--text);
@@ -403,38 +415,106 @@ function goBack() {
   currentIndex = -1;
 }
 
+// ── Build staircase grid: suspects × categories, then categories × categories ──
+//  With k categories and n suspects there are (k+1) row groups and k column
+//  groups. A row band is a row group crossed with every column group to its
+//  RIGHT; cells to its LEFT are empty (the staircase shape). Category-against-
+//  category blocks are NOT decoration — chaining a cross through them is how
+//  the restricted solver finishes every case by elimination.
+function buildStaircaseGrid(p) {
+  const cats = p.categories;
+  const n = p.suspects.length;
+
+  // Row groups, top to bottom: suspects first, then categories last-to-first
+  const rowGroups = [];
+  // ── Suspects band ──
+  rowGroups.push({
+    key: '__suspects__',
+    label: '',
+    values: p.suspects,
+  });
+  // ── Category bands, from last to second ──
+  for (let j = cats.length - 1; j >= 1; j--) {
+    rowGroups.push({
+      key: cats[j].key,
+      label: cats[j].label,
+      values: cats[j].values,
+    });
+  }
+
+  // Column groups: all categories, left to right
+  const colGroups = cats.map(c => ({
+    key: c.key,
+    label: c.label,
+    values: c.values,
+  }));
+
+  const totalCols = colGroups.reduce((s, cg) => s + cg.values.length, 0);
+
+  // ── Header: row label area + category names spanning value columns ──
+  let html = '<table class="grid-table"><thead>';
+  html += '<tr><th class="row-label-hdr"></th>';
+  colGroups.forEach(cg => {
+    html += `<th class="cat-header" colspan="${cg.values.length}">${esc(cg.label)}</th>`;
+  });
+  html += '</tr>';
+
+  // ── Value sub-headers ──
+  html += '<tr><th class="row-label-hdr"></th>';
+  colGroups.forEach(cg => {
+    cg.values.forEach(v => {
+      html += `<th>${esc(shorten(v, 16))}</th>`;
+    });
+  });
+  html += '</tr></thead><tbody>';
+
+  // ── Walk row bands ──
+  // For suspects: show all columns.
+  // For category at index j: show columns 0..j-1 (to the LEFT of the diagonal).
+  rowGroups.forEach(rg => {
+    let showUntil; // exclusive: show column groups where cgi < showUntil
+    if (rg.key === '__suspects__') {
+      showUntil = colGroups.length; // all columns
+    } else {
+      const catIdx = cats.findIndex(c => c.key === rg.key);
+      showUntil = catIdx; // columns left of this category
+    }
+
+    rg.values.forEach((rv, ri) => {
+      html += '<tr>';
+
+      // Row label: for suspects, each name. For categories, each value.
+      if (rg.label) {
+        html += `<td class="suspect-col">${esc(rv)}</td>`;
+      } else {
+        html += `<td class="suspect-col">${esc(rv)}</td>`;
+      }
+
+      // Walk column groups
+      colGroups.forEach((cg, cgi) => {
+        cg.values.forEach((cv, cvi) => {
+          if (cgi < showUntil) {
+            html += '<td class="cell"></td>';
+          } else {
+            // Padding — empty cell for staircase shape
+            html += '<td class="cell pad"></td>';
+          }
+        });
+      });
+      html += '</tr>';
+    });
+  });
+
+  html += '</tbody></table>';
+  return html;
+}
+
 // ── Render Puzzle Page ──
 function renderPuzzle(p) {
   const cats = p.categories;
   const suspects = p.suspects;
-  
-  // Build grid HTML
-  let gridHTML = '<table class="grid-table"><thead><tr><th></th>';
-  
-  // Category headers with value sub-columns
-  cats.forEach(cat => {
-    gridHTML += `<th class="cat-header" colspan="${cat.values.length}">${esc(cat.label)}</th>`;
-  });
-  gridHTML += '</tr><tr><th></th>';
-  cats.forEach(cat => {
-    cat.values.forEach(v => {
-      gridHTML += `<th>${esc(shorten(v, 18))}</th>`;
-    });
-  });
-  gridHTML += '</tr></thead><tbody>';
-  
-  suspects.forEach((s, si) => {
-    gridHTML += '<tr>';
-    gridHTML += `<td class="suspect-col">${esc(s)}</td>`;
-    cats.forEach(cat => {
-      cat.values.forEach((v, vi) => {
-        gridHTML += `<td class="cell"></td>`;
-      });
-    });
-    gridHTML += '</tr>';
-  });
-  
-  gridHTML += '</tbody></table>';
+
+  let gridHTML = buildStaircaseGrid(p);
   
   // Clues
   let cluesHTML = '<ol class="clue-list clue-section">';
@@ -443,8 +523,9 @@ function renderPuzzle(p) {
   });
   cluesHTML += '</ol>';
   
-  // Solution
-  let solutionHTML = '<table><thead><tr><th>Suspect</th>';
+  // Solution — show both suspect rows and category-against-category
+  let solutionHTML = '<h3 style="margin-bottom:0.4rem;color:var(--green)">Suspects</h3>';
+  solutionHTML += '<table><thead><tr><th>Suspect</th>';
   cats.forEach(cat => {
     solutionHTML += `<th>${esc(cat.label)}</th>`;
   });
@@ -458,6 +539,35 @@ function renderPuzzle(p) {
     solutionHTML += '</tr>';
   });
   solutionHTML += '</tbody></table>';
+
+  // Category-against-category table
+  if (cats.length >= 2) {
+    for (let j = cats.length - 1; j >= 1; j--) {
+      for (let i = 0; i < j; i++) {
+        const rowCat = cats[j];
+        const colCat = cats[i];
+        solutionHTML += `<h3 style="margin:0.8rem 0 0.4rem;color:var(--green)">${esc(rowCat.label)} × ${esc(colCat.label)}</h3>`;
+        solutionHTML += '<table><thead><tr><th></th>';
+        colCat.values.forEach(v => {
+          solutionHTML += `<th>${esc(shorten(v, 14))}</th>`;
+        });
+        solutionHTML += '</tr></thead><tbody>';
+        
+        // Derive: which suspect index owns each row value
+        rowCat.values.forEach((rv, ri) => {
+          const suspectIdx = p.solution[rowCat.key].indexOf(rv);
+          solutionHTML += '<tr>';
+          solutionHTML += `<td><strong>${esc(rv)}</strong></td>`;
+          colCat.values.forEach((cv, ci) => {
+            const owned = p.solution[colCat.key][suspectIdx] === cv;
+            solutionHTML += `<td>${owned ? '●' : ''}</td>`;
+          });
+          solutionHTML += '</tr>';
+        });
+        solutionHTML += '</tbody></table>';
+      }
+    }
+  }
   
   document.getElementById('puzzlePage').innerHTML = `
     <div class="puzzle-header">
