@@ -1,0 +1,1658 @@
+[
+  {
+    "id": 1,
+    "scene": "binding shop",
+    "village": "Corvine Hill",
+    "victim": "Librarian Edwin Roke",
+    "intro": "Members of the Athenaeum sign for every volume they take. One name in the register belongs to a man who will not be signing anything again.",
+    "difficulty": "easy",
+    "suspects": [
+      "Mr. Bartram Quill",
+      "Colonel Ross Pike",
+      "Lady Beatrix Vane",
+      "Baroness Ilse Krug"
+    ],
+    "categories": [
+      {
+        "key": "weapon",
+        "label": "Weapon",
+        "values": [
+          "book press",
+          "paper guillotine",
+          "brass lamp stand",
+          "leather strop"
+        ],
+        "has": "{s} carried the {v}",
+        "has_not": "{s} did not carry the {v}"
+      },
+      {
+        "key": "place",
+        "label": "Seen in",
+        "values": [
+          "long room",
+          "map cabinet room",
+          "silence room",
+          "binding shop"
+        ],
+        "has": "{s} was seen in the {v}",
+        "has_not": "{s} was never in the {v}"
+      }
+    ],
+    "clues": [
+      {
+        "text": "The one who carried the leather strop was either Mr. Bartram Quill or Baroness Ilse Krug.",
+        "kind": "either"
+      },
+      {
+        "text": "The one seen in the long room was either Colonel Ross Pike or Lady Beatrix Vane.",
+        "kind": "either"
+      },
+      {
+        "text": "Colonel Ross Pike did not carry the book press.",
+        "kind": "negative"
+      },
+      {
+        "text": "The one who carried the paper guillotine was either Mr. Bartram Quill or Colonel Ross Pike.",
+        "kind": "either"
+      },
+      {
+        "text": "The one seen in the binding shop was either Colonel Ross Pike or Baroness Ilse Krug.",
+        "kind": "either"
+      },
+      {
+        "text": "Mr. Bartram Quill was never in the map cabinet room.",
+        "kind": "negative"
+      },
+      {
+        "text": "The one who carried the book press was either Colonel Ross Pike or Baroness Ilse Krug.",
+        "kind": "either"
+      },
+      {
+        "text": "Baroness Ilse Krug was never in the binding shop.",
+        "kind": "negative"
+      }
+    ],
+    "solution": {
+      "weapon": [
+        "leather strop",
+        "paper guillotine",
+        "brass lamp stand",
+        "book press"
+      ],
+      "place": [
+        "silence room",
+        "binding shop",
+        "long room",
+        "map cabinet room"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "scene": "reading room",
+    "village": "Ashcombe",
+    "victim": "Curator Hugh Marle",
+    "intro": "The Ravensmoor cameo went into its case at closing and was gone by morning. So was the curator's pulse.",
+    "difficulty": "easy",
+    "suspects": [
+      "Sister Agnes Moore",
+      "Miss Lena Ashby",
+      "Lady Beatrix Vane",
+      "Father Owen Blake"
+    ],
+    "categories": [
+      {
+        "key": "weapon",
+        "label": "Weapon",
+        "values": [
+          "ceremonial dagger",
+          "bronze statuette",
+          "glass cutter",
+          "picture wire"
+        ],
+        "has": "{s} carried the {v}",
+        "has_not": "{s} did not carry the {v}"
+      },
+      {
+        "key": "place",
+        "label": "Seen in",
+        "values": [
+          "antiquities hall",
+          "coin cabinet",
+          "restoration lab",
+          "reading room"
+        ],
+        "has": "{s} was seen in the {v}",
+        "has_not": "{s} was never in the {v}"
+      }
+    ],
+    "clues": [
+      {
+        "text": "Father Owen Blake carried the ceremonial dagger.",
+        "kind": "direct"
+      },
+      {
+        "text": "The one seen in the coin cabinet was either Sister Agnes Moore or Lady Beatrix Vane.",
+        "kind": "either"
+      },
+      {
+        "text": "The one who carried the bronze statuette was seen in the antiquities hall.",
+        "kind": "link"
+      },
+      {
+        "text": "Sister Agnes Moore was never in the reading room.",
+        "kind": "negative"
+      },
+      {
+        "text": "Father Owen Blake was never in the reading room.",
+        "kind": "negative"
+      },
+      {
+        "text": "Lady Beatrix Vane did not carry the bronze statuette.",
+        "kind": "negative"
+      },
+      {
+        "text": "Sister Agnes Moore did not carry the bronze statuette.",
+        "kind": "negative"
+      },
+      {
+        "text": "Sister Agnes Moore did not carry the glass cutter.",
+        "kind": "negative"
+      }
+    ],
+    "solution": {
+      "weapon": [
+        "picture wire",
+        "bronze statuette",
+        "glass cutter",
+        "ceremonial dagger"
+      ],
+      "place": [
+        "coin cabinet",
+        "antiquities hall",
+        "reading room",
+        "restoration lab"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "scene": "fly loft",
+    "village": "Ashcombe",
+    "victim": "Maestro Falcone",
+    "intro": "Maestro Falcone took his final bow before nine hundred people and never reached his carriage. Only the names below held a key to the stage door.",
+    "difficulty": "easy",
+    "suspects": [
+      "Miss Lena Ashby",
+      "Mr. Anton Sable",
+      "Sergeant Hal Neave",
+      "Mr. Cyrus Hale"
+    ],
+    "categories": [
+      {
+        "key": "weapon",
+        "label": "Weapon",
+        "values": [
+          "violin string",
+          "prop dagger",
+          "stage sandbag",
+          "vial of chloral"
+        ],
+        "has": "{s} carried the {v}",
+        "has_not": "{s} did not carry the {v}"
+      },
+      {
+        "key": "place",
+        "label": "Seen in",
+        "values": [
+          "orchestra pit",
+          "prompt corner",
+          "dressing room",
+          "fly loft"
+        ],
+        "has": "{s} was seen in the {v}",
+        "has_not": "{s} was never in the {v}"
+      }
+    ],
+    "clues": [
+      {
+        "text": "Mr. Cyrus Hale carried the vial of chloral.",
+        "kind": "direct"
+      },
+      {
+        "text": "The one who carried the stage sandbag was either Miss Lena Ashby or Mr. Cyrus Hale.",
+        "kind": "either"
+      },
+      {
+        "text": "The one who carried the violin string was seen in the dressing room.",
+        "kind": "link"
+      },
+      {
+        "text": "Miss Lena Ashby was never in the fly loft.",
+        "kind": "negative"
+      },
+      {
+        "text": "Mr. Anton Sable did not carry the violin string.",
+        "kind": "negative"
+      },
+      {
+        "text": "Miss Lena Ashby was never in the orchestra pit.",
+        "kind": "negative"
+      },
+      {
+        "text": "Mr. Anton Sable was never in the orchestra pit.",
+        "kind": "negative"
+      }
+    ],
+    "solution": {
+      "weapon": [
+        "stage sandbag",
+        "prop dagger",
+        "violin string",
+        "vial of chloral"
+      ],
+      "place": [
+        "prompt corner",
+        "fly loft",
+        "dressing room",
+        "orchestra pit"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "scene": "morning room",
+    "village": "Ossory",
+    "victim": "Sir Ambrose Kell",
+    "intro": "The Ossory has admitted no scandal in ninety years. Sir Ambrose Kell was found before the fires were banked, and every member who signed the book that evening is named below.",
+    "difficulty": "easy",
+    "suspects": [
+      "Sister Agnes Moore",
+      "Dr. Julius Wren",
+      "Mme. Irina Sarto",
+      "Sergeant Hal Neave"
+    ],
+    "categories": [
+      {
+        "key": "weapon",
+        "label": "Weapon",
+        "values": [
+          "billiard cue",
+          "decanter stopper",
+          "brass ashtray",
+          "letter spike"
+        ],
+        "has": "{s} carried the {v}",
+        "has_not": "{s} did not carry the {v}"
+      },
+      {
+        "key": "place",
+        "label": "Seen in",
+        "values": [
+          "smoking room",
+          "strangers' room",
+          "morning room",
+          "cellar bar"
+        ],
+        "has": "{s} was seen in the {v}",
+        "has_not": "{s} was never in the {v}"
+      }
+    ],
+    "clues": [
+      {
+        "text": "Mme. Irina Sarto carried the billiard cue.",
+        "kind": "direct"
+      },
+      {
+        "text": "The one seen in the strangers' room was either Dr. Julius Wren or Mme. Irina Sarto.",
+        "kind": "either"
+      },
+      {
+        "text": "The one who carried the letter spike was either Sister Agnes Moore or Sergeant Hal Neave.",
+        "kind": "either"
+      },
+      {
+        "text": "The one who carried the letter spike was seen in the cellar bar.",
+        "kind": "link"
+      },
+      {
+        "text": "Dr. Julius Wren was never in the smoking room.",
+        "kind": "negative"
+      },
+      {
+        "text": "Sergeant Hal Neave was never in the cellar bar.",
+        "kind": "negative"
+      },
+      {
+        "text": "Sergeant Hal Neave was never in the smoking room.",
+        "kind": "negative"
+      },
+      {
+        "text": "Dr. Julius Wren did not carry the decanter stopper.",
+        "kind": "negative"
+      }
+    ],
+    "solution": {
+      "weapon": [
+        "letter spike",
+        "brass ashtray",
+        "billiard cue",
+        "decanter stopper"
+      ],
+      "place": [
+        "cellar bar",
+        "strangers' room",
+        "smoking room",
+        "morning room"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "scene": "cellar bar",
+    "village": "Ossory",
+    "victim": "Sir Ambrose Kell",
+    "intro": "The Ossory has admitted no scandal in ninety years. Sir Ambrose Kell was found before the fires were banked, and every member who signed the book that evening is named below.",
+    "difficulty": "easy",
+    "suspects": [
+      "Professor Emil Roth",
+      "Father Owen Blake",
+      "Miss Ottoline Frayne",
+      "Signor Paolo Betti"
+    ],
+    "categories": [
+      {
+        "key": "weapon",
+        "label": "Weapon",
+        "values": [
+          "billiard cue",
+          "decanter stopper",
+          "brass ashtray",
+          "letter spike"
+        ],
+        "has": "{s} carried the {v}",
+        "has_not": "{s} did not carry the {v}"
+      },
+      {
+        "key": "place",
+        "label": "Seen in",
+        "values": [
+          "smoking room",
+          "strangers' room",
+          "morning room",
+          "cellar bar"
+        ],
+        "has": "{s} was seen in the {v}",
+        "has_not": "{s} was never in the {v}"
+      }
+    ],
+    "clues": [
+      {
+        "text": "Signor Paolo Betti was seen in the smoking room.",
+        "kind": "direct"
+      },
+      {
+        "text": "The one who carried the decanter stopper was either Professor Emil Roth or Signor Paolo Betti.",
+        "kind": "either"
+      },
+      {
+        "text": "The one who carried the billiard cue was seen in the morning room.",
+        "kind": "link"
+      },
+      {
+        "text": "Miss Ottoline Frayne did not carry the letter spike.",
+        "kind": "negative"
+      },
+      {
+        "text": "Miss Ottoline Frayne was never in the morning room.",
+        "kind": "negative"
+      },
+      {
+        "text": "Miss Ottoline Frayne was never in the cellar bar.",
+        "kind": "negative"
+      },
+      {
+        "text": "Signor Paolo Betti did not carry the decanter stopper.",
+        "kind": "negative"
+      }
+    ],
+    "solution": {
+      "weapon": [
+        "decanter stopper",
+        "billiard cue",
+        "brass ashtray",
+        "letter spike"
+      ],
+      "place": [
+        "cellar bar",
+        "morning room",
+        "strangers' room",
+        "smoking room"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "scene": "lych gate",
+    "village": "Corvine Hill",
+    "victim": "Sexton Amos Durrant",
+    "intro": "A grave was dug that no burial had been ordered for. The sexton who dug it could not be asked why.",
+    "difficulty": "easy",
+    "suspects": [
+      "Lady Beatrix Vane",
+      "Sergeant Hal Neave",
+      "Baroness Ilse Krug",
+      "Dr. Ada Verrick"
+    ],
+    "categories": [
+      {
+        "key": "weapon",
+        "label": "Weapon",
+        "values": [
+          "grave spade",
+          "bier strap",
+          "lead flashing",
+          "yew stake"
+        ],
+        "has": "{s} carried the {v}",
+        "has_not": "{s} did not carry the {v}"
+      },
+      {
+        "key": "place",
+        "label": "Seen in",
+        "values": [
+          "lych gate",
+          "chapel vault",
+          "sexton's hut",
+          "yew grove"
+        ],
+        "has": "{s} was seen in the {v}",
+        "has_not": "{s} was never in the {v}"
+      }
+    ],
+    "clues": [
+      {
+        "text": "Lady Beatrix Vane was seen in the lych gate.",
+        "kind": "direct"
+      },
+      {
+        "text": "The one who carried the lead flashing was either Lady Beatrix Vane or Baroness Ilse Krug.",
+        "kind": "either"
+      },
+      {
+        "text": "The one seen in the chapel vault was either Lady Beatrix Vane or Sergeant Hal Neave.",
+        "kind": "either"
+      },
+      {
+        "text": "The one who carried the lead flashing was seen in the sexton's hut.",
+        "kind": "link"
+      },
+      {
+        "text": "The one who carried the grave spade was seen in the chapel vault.",
+        "kind": "link"
+      },
+      {
+        "text": "Lady Beatrix Vane did not carry the bier strap.",
+        "kind": "negative"
+      }
+    ],
+    "solution": {
+      "weapon": [
+        "yew stake",
+        "grave spade",
+        "lead flashing",
+        "bier strap"
+      ],
+      "place": [
+        "lych gate",
+        "chapel vault",
+        "sexton's hut",
+        "yew grove"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "scene": "essence vault",
+    "village": "Montorre",
+    "victim": "Aurelio Bassi",
+    "intro": "One nose in the city could name a scent from three drops. Somebody made certain it would never name this one.",
+    "difficulty": "easy",
+    "suspects": [
+      "Sister Agnes Moore",
+      "Miss Lena Ashby",
+      "Signor Paolo Betti",
+      "Lady Beatrix Vane"
+    ],
+    "categories": [
+      {
+        "key": "weapon",
+        "label": "Weapon",
+        "values": [
+          "essence phial",
+          "glass stopper",
+          "still coil",
+          "wax seal"
+        ],
+        "has": "{s} carried the {v}",
+        "has_not": "{s} did not carry the {v}"
+      },
+      {
+        "key": "place",
+        "label": "Seen in",
+        "values": [
+          "still room",
+          "blending room",
+          "essence vault",
+          "drying loft"
+        ],
+        "has": "{s} was seen in the {v}",
+        "has_not": "{s} was never in the {v}"
+      }
+    ],
+    "clues": [
+      {
+        "text": "Signor Paolo Betti carried the still coil.",
+        "kind": "direct"
+      },
+      {
+        "text": "Miss Lena Ashby carried the wax seal.",
+        "kind": "direct"
+      },
+      {
+        "text": "The one seen in the essence vault was either Sister Agnes Moore or Lady Beatrix Vane.",
+        "kind": "either"
+      },
+      {
+        "text": "The one who carried the glass stopper was seen in the drying loft.",
+        "kind": "link"
+      },
+      {
+        "text": "The one who carried the still coil was seen in the still room.",
+        "kind": "link"
+      },
+      {
+        "text": "Lady Beatrix Vane was never in the essence vault.",
+        "kind": "negative"
+      }
+    ],
+    "solution": {
+      "weapon": [
+        "essence phial",
+        "wax seal",
+        "still coil",
+        "glass stopper"
+      ],
+      "place": [
+        "essence vault",
+        "blending room",
+        "still room",
+        "drying loft"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "scene": "casting room",
+    "village": "Verrand",
+    "victim": "Modeller Josiah Penn",
+    "intro": "The Cormorant closed with nine figures standing and opened with ten. Josiah Penn had spent thirty years making faces that never blinked, and one of them is not wax.",
+    "difficulty": "easy",
+    "suspects": [
+      "Mme. Irina Sarto",
+      "Miss Ottoline Frayne",
+      "Colonel Ross Pike",
+      "Miss Lena Ashby"
+    ],
+    "categories": [
+      {
+        "key": "weapon",
+        "label": "Weapon",
+        "values": [
+          "modelling knife",
+          "wax ladle",
+          "wig pins",
+          "casting plaster"
+        ],
+        "has": "{s} carried the {v}",
+        "has_not": "{s} did not carry the {v}"
+      },
+      {
+        "key": "place",
+        "label": "Seen in",
+        "values": [
+          "tableau hall",
+          "casting room",
+          "wig chamber",
+          "chamber of kings"
+        ],
+        "has": "{s} was seen in the {v}",
+        "has_not": "{s} was never in the {v}"
+      }
+    ],
+    "clues": [
+      {
+        "text": "Miss Lena Ashby carried the wig pins.",
+        "kind": "direct"
+      },
+      {
+        "text": "Mme. Irina Sarto was seen in the tableau hall.",
+        "kind": "direct"
+      },
+      {
+        "text": "The one who carried the modelling knife was seen in the tableau hall.",
+        "kind": "link"
+      },
+      {
+        "text": "The one who carried the wig pins was seen in the wig chamber.",
+        "kind": "link"
+      },
+      {
+        "text": "Miss Ottoline Frayne was never in the casting room.",
+        "kind": "negative"
+      },
+      {
+        "text": "Miss Ottoline Frayne did not carry the casting plaster.",
+        "kind": "negative"
+      }
+    ],
+    "solution": {
+      "weapon": [
+        "modelling knife",
+        "wax ladle",
+        "casting plaster",
+        "wig pins"
+      ],
+      "place": [
+        "tableau hall",
+        "chamber of kings",
+        "casting room",
+        "wig chamber"
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "scene": "cockpit",
+    "village": "Tarn Head",
+    "victim": "Commodore Marsh",
+    "intro": "The Kestrel came about with her mainsail loose and her owner over the side. The tide gave the Commodore back at dawn.",
+    "difficulty": "easy",
+    "suspects": [
+      "Sergeant Hal Neave",
+      "Miss Ottoline Frayne",
+      "Mme. Irina Sarto",
+      "Judge Marla Finch"
+    ],
+    "categories": [
+      {
+        "key": "weapon",
+        "label": "Weapon",
+        "values": [
+          "boom shackle",
+          "flare cartridge",
+          "spinnaker line",
+          "brass winch handle"
+        ],
+        "has": "{s} carried the {v}",
+        "has_not": "{s} did not carry the {v}"
+      },
+      {
+        "key": "place",
+        "label": "Seen in",
+        "values": [
+          "chart room",
+          "forepeak",
+          "cockpit",
+          "galley"
+        ],
+        "has": "{s} was seen in the {v}",
+        "has_not": "{s} was never in the {v}"
+      }
+    ],
+    "clues": [
+      {
+        "text": "The one seen in the cockpit was either Miss Ottoline Frayne or Judge Marla Finch.",
+        "kind": "either"
+      },
+      {
+        "text": "The one who carried the flare cartridge was either Miss Ottoline Frayne or Judge Marla Finch.",
+        "kind": "either"
+      },
+      {
+        "text": "The one who carried the boom shackle was seen in the forepeak.",
+        "kind": "link"
+      },
+      {
+        "text": "The one who carried the brass winch handle was either Miss Ottoline Frayne or Mme. Irina Sarto.",
+        "kind": "either"
+      },
+      {
+        "text": "Mme. Irina Sarto was never in the galley.",
+        "kind": "negative"
+      },
+      {
+        "text": "Mme. Irina Sarto did not carry the brass winch handle.",
+        "kind": "negative"
+      },
+      {
+        "text": "Miss Ottoline Frayne was never in the cockpit.",
+        "kind": "negative"
+      },
+      {
+        "text": "Mme. Irina Sarto was never in the forepeak.",
+        "kind": "negative"
+      }
+    ],
+    "solution": {
+      "weapon": [
+        "boom shackle",
+        "brass winch handle",
+        "spinnaker line",
+        "flare cartridge"
+      ],
+      "place": [
+        "forepeak",
+        "galley",
+        "chart room",
+        "cockpit"
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "scene": "indoor school",
+    "village": "Ossory",
+    "victim": "Master Hulme",
+    "intro": "The horses were loose in the yard at first bell and Master Hulme was not there to call them in. He never let anyone else.",
+    "difficulty": "easy",
+    "suspects": [
+      "Mr. Anton Sable",
+      "Sergeant Hal Neave",
+      "Lady Beatrix Vane",
+      "Mme. Irina Sarto"
+    ],
+    "categories": [
+      {
+        "key": "weapon",
+        "label": "Weapon",
+        "values": [
+          "curry comb",
+          "stirrup leather",
+          "riding crop",
+          "feed scoop"
+        ],
+        "has": "{s} carried the {v}",
+        "has_not": "{s} did not carry the {v}"
+      },
+      {
+        "key": "place",
+        "label": "Seen in",
+        "values": [
+          "indoor school",
+          "tack room",
+          "hay loft",
+          "wash stall"
+        ],
+        "has": "{s} was seen in the {v}",
+        "has_not": "{s} was never in the {v}"
+      }
+    ],
+    "clues": [
+      {
+        "text": "Sergeant Hal Neave was seen in the hay loft.",
+        "kind": "direct"
+      },
+      {
+        "text": "The one who carried the feed scoop was either Mr. Anton Sable or Mme. Irina Sarto.",
+        "kind": "either"
+      },
+      {
+        "text": "The one who carried the riding crop was either Sergeant Hal Neave or Mme. Irina Sarto.",
+        "kind": "either"
+      },
+      {
+        "text": "The one who carried the stirrup leather was seen in the wash stall.",
+        "kind": "link"
+      },
+      {
+        "text": "Lady Beatrix Vane did not carry the stirrup leather.",
+        "kind": "negative"
+      },
+      {
+        "text": "Mme. Irina Sarto was never in the indoor school.",
+        "kind": "negative"
+      },
+      {
+        "text": "Mme. Irina Sarto did not carry the stirrup leather.",
+        "kind": "negative"
+      }
+    ],
+    "solution": {
+      "weapon": [
+        "stirrup leather",
+        "riding crop",
+        "curry comb",
+        "feed scoop"
+      ],
+      "place": [
+        "wash stall",
+        "hay loft",
+        "indoor school",
+        "tack room"
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "scene": "weaving shed",
+    "village": "Montorre",
+    "victim": "Overseer Rufus Tolle",
+    "intro": "The looms ran on without an overseer for a full hour, which had never once happened while Rufus Tolle drew breath.",
+    "difficulty": "easy",
+    "suspects": [
+      "Colonel Ross Pike",
+      "Mr. Bartram Quill",
+      "Signor Paolo Betti",
+      "Dr. Ada Verrick"
+    ],
+    "categories": [
+      {
+        "key": "weapon",
+        "label": "Weapon",
+        "values": [
+          "loom shuttle",
+          "warp thread",
+          "dye ladle",
+          "shear blade"
+        ],
+        "has": "{s} carried the {v}",
+        "has_not": "{s} did not carry the {v}"
+      },
+      {
+        "key": "place",
+        "label": "Seen in",
+        "values": [
+          "weaving shed",
+          "dye house",
+          "warp room",
+          "pattern office"
+        ],
+        "has": "{s} was seen in the {v}",
+        "has_not": "{s} was never in the {v}"
+      }
+    ],
+    "clues": [
+      {
+        "text": "The one seen in the dye house was either Colonel Ross Pike or Signor Paolo Betti.",
+        "kind": "either"
+      },
+      {
+        "text": "The one seen in the pattern office was either Signor Paolo Betti or Dr. Ada Verrick.",
+        "kind": "either"
+      },
+      {
+        "text": "The one who carried the loom shuttle was seen in the warp room.",
+        "kind": "link"
+      },
+      {
+        "text": "The one who carried the dye ladle was seen in the pattern office.",
+        "kind": "link"
+      },
+      {
+        "text": "Colonel Ross Pike did not carry the shear blade.",
+        "kind": "negative"
+      },
+      {
+        "text": "Mr. Bartram Quill did not carry the loom shuttle.",
+        "kind": "negative"
+      },
+      {
+        "text": "Dr. Ada Verrick was never in the pattern office.",
+        "kind": "negative"
+      }
+    ],
+    "solution": {
+      "weapon": [
+        "warp thread",
+        "shear blade",
+        "dye ladle",
+        "loom shuttle"
+      ],
+      "place": [
+        "dye house",
+        "weaving shed",
+        "pattern office",
+        "warp room"
+      ]
+    }
+  },
+  {
+    "id": 12,
+    "scene": "crew room",
+    "village": "Kerrow",
+    "victim": "Coxswain Marne",
+    "intro": "The maroon went up and the crew came running. Their coxswain was already past helping, and the sea was rising.",
+    "difficulty": "easy",
+    "suspects": [
+      "Dr. Julius Wren",
+      "Mrs. Alice Crole",
+      "Sister Agnes Moore",
+      "Baroness Ilse Krug"
+    ],
+    "categories": [
+      {
+        "key": "weapon",
+        "label": "Weapon",
+        "values": [
+          "brass rowlock",
+          "tarred line",
+          "flare pistol",
+          "hand bilge pump"
+        ],
+        "has": "{s} carried the {v}",
+        "has_not": "{s} did not carry the {v}"
+      },
+      {
+        "key": "place",
+        "label": "Seen in",
+        "values": [
+          "boat house",
+          "launch bay",
+          "crew room",
+          "watch tower"
+        ],
+        "has": "{s} was seen in the {v}",
+        "has_not": "{s} was never in the {v}"
+      }
+    ],
+    "clues": [
+      {
+        "text": "Baroness Ilse Krug was seen in the watch tower.",
+        "kind": "direct"
+      },
+      {
+        "text": "Sister Agnes Moore carried the hand bilge pump.",
+        "kind": "direct"
+      },
+      {
+        "text": "The one who carried the hand bilge pump was seen in the crew room.",
+        "kind": "link"
+      },
+      {
+        "text": "The one who carried the flare pistol was seen in the watch tower.",
+        "kind": "link"
+      },
+      {
+        "text": "Mrs. Alice Crole was never in the boat house.",
+        "kind": "negative"
+      },
+      {
+        "text": "Mrs. Alice Crole did not carry the tarred line.",
+        "kind": "negative"
+      }
+    ],
+    "solution": {
+      "weapon": [
+        "tarred line",
+        "brass rowlock",
+        "hand bilge pump",
+        "flare pistol"
+      ],
+      "place": [
+        "boat house",
+        "launch bay",
+        "crew room",
+        "watch tower"
+      ]
+    }
+  },
+  {
+    "id": 13,
+    "scene": "robe alcove",
+    "village": "Ossory",
+    "victim": "Attendant Prue",
+    "intro": "The last bather signed out and the doors were bolted from inside. In the morning the attendant had not gone home.",
+    "difficulty": "easy",
+    "suspects": [
+      "Lady Beatrix Vane",
+      "Baroness Ilse Krug",
+      "Sergeant Hal Neave",
+      "Mme. Irina Sarto"
+    ],
+    "categories": [
+      {
+        "key": "weapon",
+        "label": "Weapon",
+        "values": [
+          "brass tap key",
+          "wet towel",
+          "glass phial",
+          "pumice block"
+        ],
+        "has": "{s} carried the {v}",
+        "has_not": "{s} did not carry the {v}"
+      },
+      {
+        "key": "place",
+        "label": "Seen in",
+        "values": [
+          "steam room",
+          "cold plunge",
+          "robe alcove",
+          "boiler room"
+        ],
+        "has": "{s} was seen in the {v}",
+        "has_not": "{s} was never in the {v}"
+      }
+    ],
+    "clues": [
+      {
+        "text": "Sergeant Hal Neave carried the wet towel.",
+        "kind": "direct"
+      },
+      {
+        "text": "Mme. Irina Sarto was seen in the steam room.",
+        "kind": "direct"
+      },
+      {
+        "text": "The one who carried the pumice block was seen in the robe alcove.",
+        "kind": "link"
+      },
+      {
+        "text": "Baroness Ilse Krug did not carry the pumice block.",
+        "kind": "negative"
+      },
+      {
+        "text": "Baroness Ilse Krug was never in the cold plunge.",
+        "kind": "negative"
+      },
+      {
+        "text": "Baroness Ilse Krug did not carry the glass phial.",
+        "kind": "negative"
+      }
+    ],
+    "solution": {
+      "weapon": [
+        "pumice block",
+        "brass tap key",
+        "wet towel",
+        "glass phial"
+      ],
+      "place": [
+        "robe alcove",
+        "boiler room",
+        "cold plunge",
+        "steam room"
+      ]
+    }
+  },
+  {
+    "id": 14,
+    "scene": "clearing hall",
+    "village": "Aldergate",
+    "victim": "Chief Clerk Rennard",
+    "intro": "The Aldergate's audit was to begin at first light. Rennard held the only full set of combinations, and he did not live to hand them over.",
+    "difficulty": "easy",
+    "suspects": [
+      "Professor Emil Roth",
+      "Mr. Cyrus Hale",
+      "Captain Ivo Renn",
+      "Mme. Irina Sarto"
+    ],
+    "categories": [
+      {
+        "key": "weapon",
+        "label": "Weapon",
+        "values": [
+          "iron bullion bar",
+          "safe handle",
+          "vial of prussic",
+          "guard's truncheon"
+        ],
+        "has": "{s} carried the {v}",
+        "has_not": "{s} did not carry the {v}"
+      },
+      {
+        "key": "place",
+        "label": "Seen in",
+        "values": [
+          "strongroom",
+          "clearing hall",
+          "night office",
+          "coin store"
+        ],
+        "has": "{s} was seen in the {v}",
+        "has_not": "{s} was never in the {v}"
+      }
+    ],
+    "clues": [
+      {
+        "text": "Mme. Irina Sarto carried the guard's truncheon.",
+        "kind": "direct"
+      },
+      {
+        "text": "The one seen in the clearing hall was either Professor Emil Roth or Mme. Irina Sarto.",
+        "kind": "either"
+      },
+      {
+        "text": "The one who carried the vial of prussic was either Professor Emil Roth or Mr. Cyrus Hale.",
+        "kind": "either"
+      },
+      {
+        "text": "The one who carried the safe handle was seen in the strongroom.",
+        "kind": "link"
+      },
+      {
+        "text": "The one seen in the coin store was either Professor Emil Roth or Captain Ivo Renn.",
+        "kind": "either"
+      },
+      {
+        "text": "Captain Ivo Renn did not carry the safe handle.",
+        "kind": "negative"
+      },
+      {
+        "text": "Professor Emil Roth did not carry the vial of prussic.",
+        "kind": "negative"
+      }
+    ],
+    "solution": {
+      "weapon": [
+        "safe handle",
+        "vial of prussic",
+        "iron bullion bar",
+        "guard's truncheon"
+      ],
+      "place": [
+        "strongroom",
+        "night office",
+        "coin store",
+        "clearing hall"
+      ]
+    }
+  },
+  {
+    "id": 15,
+    "scene": "wireless room",
+    "village": "Caldwick",
+    "victim": "Purser Neil Hoyt",
+    "intro": "Four days out of Southampton the Aurelia's purser went missing, and the ship's safe with him. He turned up before the safe did.",
+    "difficulty": "easy",
+    "suspects": [
+      "Mr. Anton Sable",
+      "Baroness Ilse Krug",
+      "Captain Ivo Renn",
+      "Lady Beatrix Vane"
+    ],
+    "categories": [
+      {
+        "key": "weapon",
+        "label": "Weapon",
+        "values": [
+          "cargo hook",
+          "steward's corkscrew",
+          "length of hawser",
+          "chloroform pad"
+        ],
+        "has": "{s} carried the {v}",
+        "has_not": "{s} did not carry the {v}"
+      },
+      {
+        "key": "place",
+        "label": "Seen in",
+        "values": [
+          "wireless room",
+          "baggage hold",
+          "purser's office",
+          "swimming bath"
+        ],
+        "has": "{s} was seen in the {v}",
+        "has_not": "{s} was never in the {v}"
+      }
+    ],
+    "clues": [
+      {
+        "text": "Mr. Anton Sable was seen in the purser's office.",
+        "kind": "direct"
+      },
+      {
+        "text": "Captain Ivo Renn was seen in the swimming bath.",
+        "kind": "direct"
+      },
+      {
+        "text": "The one seen in the baggage hold was either Baroness Ilse Krug or Captain Ivo Renn.",
+        "kind": "either"
+      },
+      {
+        "text": "The one who carried the steward's corkscrew was either Baroness Ilse Krug or Captain Ivo Renn.",
+        "kind": "either"
+      },
+      {
+        "text": "The one who carried the cargo hook was seen in the swimming bath.",
+        "kind": "link"
+      },
+      {
+        "text": "Lady Beatrix Vane did not carry the length of hawser.",
+        "kind": "negative"
+      }
+    ],
+    "solution": {
+      "weapon": [
+        "length of hawser",
+        "steward's corkscrew",
+        "cargo hook",
+        "chloroform pad"
+      ],
+      "place": [
+        "purser's office",
+        "baggage hold",
+        "swimming bath",
+        "wireless room"
+      ]
+    }
+  },
+  {
+    "id": 16,
+    "scene": "service lift",
+    "village": "Belvair",
+    "victim": "Manager Gustav Reiss",
+    "intro": "For forty years the Belvair kept its guests' secrets. It could not keep its manager alive through one quiet night out of season.",
+    "difficulty": "easy",
+    "suspects": [
+      "Dr. Ada Verrick",
+      "Baroness Ilse Krug",
+      "Colonel Ross Pike",
+      "Mr. Cyrus Hale"
+    ],
+    "categories": [
+      {
+        "key": "weapon",
+        "label": "Weapon",
+        "values": [
+          "silver ice pick",
+          "champagne magnum",
+          "velvet rope",
+          "cigar cutter"
+        ],
+        "has": "{s} carried the {v}",
+        "has_not": "{s} did not carry the {v}"
+      },
+      {
+        "key": "place",
+        "label": "Seen in",
+        "values": [
+          "grand lobby",
+          "ballroom",
+          "wine vault",
+          "service lift"
+        ],
+        "has": "{s} was seen in the {v}",
+        "has_not": "{s} was never in the {v}"
+      }
+    ],
+    "clues": [
+      {
+        "text": "Dr. Ada Verrick was seen in the wine vault.",
+        "kind": "direct"
+      },
+      {
+        "text": "Mr. Cyrus Hale was seen in the ballroom.",
+        "kind": "direct"
+      },
+      {
+        "text": "The one seen in the service lift was either Dr. Ada Verrick or Colonel Ross Pike.",
+        "kind": "either"
+      },
+      {
+        "text": "The one who carried the champagne magnum was seen in the wine vault.",
+        "kind": "link"
+      },
+      {
+        "text": "The one who carried the velvet rope was seen in the service lift.",
+        "kind": "link"
+      },
+      {
+        "text": "Baroness Ilse Krug did not carry the cigar cutter.",
+        "kind": "negative"
+      }
+    ],
+    "solution": {
+      "weapon": [
+        "champagne magnum",
+        "silver ice pick",
+        "velvet rope",
+        "cigar cutter"
+      ],
+      "place": [
+        "wine vault",
+        "grand lobby",
+        "service lift",
+        "ballroom"
+      ]
+    }
+  },
+  {
+    "id": 17,
+    "scene": "signal box",
+    "village": "Aldergate",
+    "victim": "Stationmaster Gell",
+    "intro": "The final train out of Marling Street left on time and one man did not. The stationmaster's lamp was still burning when they reached him.",
+    "difficulty": "easy",
+    "suspects": [
+      "Signor Paolo Betti",
+      "Mr. Anton Sable",
+      "Professor Emil Roth",
+      "Mr. Bartram Quill"
+    ],
+    "categories": [
+      {
+        "key": "weapon",
+        "label": "Weapon",
+        "values": [
+          "signal lever",
+          "coupling pin",
+          "porter's strap",
+          "lamp oil flask"
+        ],
+        "has": "{s} carried the {v}",
+        "has_not": "{s} did not carry the {v}"
+      },
+      {
+        "key": "place",
+        "label": "Seen in",
+        "values": [
+          "ticket hall",
+          "signal box",
+          "left luggage room",
+          "waiting room"
+        ],
+        "has": "{s} was seen in the {v}",
+        "has_not": "{s} was never in the {v}"
+      }
+    ],
+    "clues": [
+      {
+        "text": "Mr. Anton Sable carried the lamp oil flask.",
+        "kind": "direct"
+      },
+      {
+        "text": "Mr. Bartram Quill was seen in the signal box.",
+        "kind": "direct"
+      },
+      {
+        "text": "Signor Paolo Betti was never in the ticket hall.",
+        "kind": "negative"
+      },
+      {
+        "text": "Mr. Bartram Quill carried the porter's strap.",
+        "kind": "direct"
+      },
+      {
+        "text": "Professor Emil Roth was seen in the waiting room.",
+        "kind": "direct"
+      },
+      {
+        "text": "Signor Paolo Betti carried the coupling pin.",
+        "kind": "direct"
+      }
+    ],
+    "solution": {
+      "weapon": [
+        "coupling pin",
+        "lamp oil flask",
+        "signal lever",
+        "porter's strap"
+      ],
+      "place": [
+        "left luggage room",
+        "ticket hall",
+        "waiting room",
+        "signal box"
+      ]
+    }
+  },
+  {
+    "id": 18,
+    "scene": "warden's room",
+    "village": "Bellingham",
+    "victim": "Warden Isabel Crewe",
+    "intro": "Twelve pensioners, one warden, and a ledger that did not add up. Isabel Crewe was going to say so in the morning.",
+    "difficulty": "easy",
+    "suspects": [
+      "Mr. Bartram Quill",
+      "Professor Emil Roth",
+      "Sergeant Hal Neave",
+      "Sister Agnes Moore"
+    ],
+    "categories": [
+      {
+        "key": "weapon",
+        "label": "Weapon",
+        "values": [
+          "bed warmer",
+          "apron cord",
+          "laudanum drops",
+          "fire tongs"
+        ],
+        "has": "{s} carried the {v}",
+        "has_not": "{s} did not carry the {v}"
+      },
+      {
+        "key": "place",
+        "label": "Seen in",
+        "values": [
+          "refectory",
+          "warden's room",
+          "linen store",
+          "chapel pew"
+        ],
+        "has": "{s} was seen in the {v}",
+        "has_not": "{s} was never in the {v}"
+      }
+    ],
+    "clues": [
+      {
+        "text": "Sister Agnes Moore was seen in the linen store.",
+        "kind": "direct"
+      },
+      {
+        "text": "The one seen in the refectory was either Mr. Bartram Quill or Sister Agnes Moore.",
+        "kind": "either"
+      },
+      {
+        "text": "The one who carried the apron cord was either Mr. Bartram Quill or Sister Agnes Moore.",
+        "kind": "either"
+      },
+      {
+        "text": "The one who carried the bed warmer was seen in the linen store.",
+        "kind": "link"
+      },
+      {
+        "text": "Sergeant Hal Neave did not carry the laudanum drops.",
+        "kind": "negative"
+      },
+      {
+        "text": "Professor Emil Roth was never in the warden's room.",
+        "kind": "negative"
+      }
+    ],
+    "solution": {
+      "weapon": [
+        "apron cord",
+        "laudanum drops",
+        "fire tongs",
+        "bed warmer"
+      ],
+      "place": [
+        "refectory",
+        "chapel pew",
+        "warden's room",
+        "linen store"
+      ]
+    }
+  },
+  {
+    "id": 19,
+    "scene": "scriptorium",
+    "village": "Caldwick",
+    "victim": "Brother Anselm",
+    "intro": "Brother Anselm kept the abbey's accounts and its confidences, and one of them killed him. The bell for lauds went unanswered.",
+    "difficulty": "easy",
+    "suspects": [
+      "Father Owen Blake",
+      "Mrs. Alice Crole",
+      "Nurse Clara Dunmow",
+      "Captain Ivo Renn"
+    ],
+    "categories": [
+      {
+        "key": "weapon",
+        "label": "Weapon",
+        "values": [
+          "candle snuffer",
+          "iron key ring",
+          "hemlock draught",
+          "mason's chisel"
+        ],
+        "has": "{s} carried the {v}",
+        "has_not": "{s} did not carry the {v}"
+      },
+      {
+        "key": "place",
+        "label": "Seen in",
+        "values": [
+          "scriptorium",
+          "crypt",
+          "refectory",
+          "cloisters"
+        ],
+        "has": "{s} was seen in the {v}",
+        "has_not": "{s} was never in the {v}"
+      }
+    ],
+    "clues": [
+      {
+        "text": "Captain Ivo Renn was seen in the scriptorium.",
+        "kind": "direct"
+      },
+      {
+        "text": "The one seen in the crypt was either Mrs. Alice Crole or Captain Ivo Renn.",
+        "kind": "either"
+      },
+      {
+        "text": "The one who carried the hemlock draught was seen in the refectory.",
+        "kind": "link"
+      },
+      {
+        "text": "Father Owen Blake did not carry the candle snuffer.",
+        "kind": "negative"
+      },
+      {
+        "text": "Mrs. Alice Crole did not carry the iron key ring.",
+        "kind": "negative"
+      },
+      {
+        "text": "Mrs. Alice Crole did not carry the candle snuffer.",
+        "kind": "negative"
+      },
+      {
+        "text": "Father Owen Blake did not carry the hemlock draught.",
+        "kind": "negative"
+      }
+    ],
+    "solution": {
+      "weapon": [
+        "iron key ring",
+        "mason's chisel",
+        "hemlock draught",
+        "candle snuffer"
+      ],
+      "place": [
+        "cloisters",
+        "crypt",
+        "refectory",
+        "scriptorium"
+      ]
+    }
+  },
+  {
+    "id": 20,
+    "scene": "laying shed",
+    "village": "Caldwick",
+    "victim": "Ropemaker Vell",
+    "intro": "Three hundred yards of hemp, one man walking it backwards all day. At the far end of the walk he had stopped walking.",
+    "difficulty": "easy",
+    "suspects": [
+      "Colonel Ross Pike",
+      "Baroness Ilse Krug",
+      "Father Owen Blake",
+      "Sister Agnes Moore"
+    ],
+    "categories": [
+      {
+        "key": "weapon",
+        "label": "Weapon",
+        "values": [
+          "hemp hackle",
+          "tar brush",
+          "laying top",
+          "twine knife"
+        ],
+        "has": "{s} carried the {v}",
+        "has_not": "{s} did not carry the {v}"
+      },
+      {
+        "key": "place",
+        "label": "Seen in",
+        "values": [
+          "spinning shed",
+          "tar kettle",
+          "hemp loft",
+          "laying shed"
+        ],
+        "has": "{s} was seen in the {v}",
+        "has_not": "{s} was never in the {v}"
+      }
+    ],
+    "clues": [
+      {
+        "text": "Colonel Ross Pike carried the tar brush.",
+        "kind": "direct"
+      },
+      {
+        "text": "Baroness Ilse Krug was seen in the hemp loft.",
+        "kind": "direct"
+      },
+      {
+        "text": "The one who carried the hemp hackle was seen in the spinning shed.",
+        "kind": "link"
+      },
+      {
+        "text": "Father Owen Blake did not carry the twine knife.",
+        "kind": "negative"
+      },
+      {
+        "text": "Colonel Ross Pike was never in the laying shed.",
+        "kind": "negative"
+      },
+      {
+        "text": "Father Owen Blake was never in the spinning shed.",
+        "kind": "negative"
+      }
+    ],
+    "solution": {
+      "weapon": [
+        "tar brush",
+        "twine knife",
+        "laying top",
+        "hemp hackle"
+      ],
+      "place": [
+        "tar kettle",
+        "hemp loft",
+        "laying shed",
+        "spinning shed"
+      ]
+    }
+  }
+]
