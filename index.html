@@ -3,471 +3,94 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CozyLogic — Gentle Logic Grid Mysteries</title>
-<meta name="description" content="Whodunit mystery logic grid puzzles. No ads, no timers, offline, 100% human solvable logic puzzles on paper and screen.">
-
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+<title>Cozy Logic Grid Puzzles</title>
+<meta name="description" content="Gentle whodunits on a logic grid. No ads, no timers, offline, never a guess.">
 <style>
   :root {
-    --bg-paper: #F9F6F0;
-    --card-bg: #FFFFFF;
-    --card-border: #E8DFD1;
-    --ink-primary: #2B2520;
-    --ink-muted: #6E6359;
-    --accent-sage: #4A6048;
-    --accent-sage-soft: #EBF1EA;
-    --accent-ochre: #C88636;
-    --accent-ochre-soft: #FBF4EA;
-    --hairline: #E5DDD0;
-    --shadow-soft: 0 10px 30px rgba(43, 37, 32, 0.05);
-    --radius-lg: 20px;
-    --radius-md: 12px;
+    --paper: #F6EFE2; --card: #FDF8EF; --ink: #3B322A; --ink-soft: #7A6C5D;
+    --hairline: #D7C9B4; --accent: #5B6E52;
   }
-
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg-paper: #161412;
-      --card-bg: #211E1B;
-      --card-border: #332E29;
-      --ink-primary: #ECE4D8;
-      --ink-muted: #A89B8C;
-      --accent-sage: #7E997B;
-      --accent-sage-soft: #242E23;
-      --accent-ochre: #E0A96D;
-      --accent-ochre-soft: #2E251B;
-      --hairline: #302A24;
-      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.3);
+      --paper: #1E1A16; --card: #272220; --ink: #EDE3D2; --ink-soft: #A79883;
+      --hairline: #463D35; --accent: #7E9670;
     }
   }
-
   * { box-sizing: border-box; }
   body {
-    margin: 0;
-    padding: 0;
-    background: var(--bg-paper);
-    color: var(--ink-primary);
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
+    margin: 0; padding: 0; background: var(--paper); color: var(--ink);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
-
-  header {
-    padding: 32px 24px;
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .brand-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: var(--ink-primary);
-  }
-
-  .brand-logo svg {
-    width: 34px;
-    height: 34px;
-  }
-
-  .brand-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 20px;
-  }
-
-  .nav-links a {
-    color: var(--ink-muted);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 15px;
-    transition: color 0.2s ease;
-  }
-
-  .nav-links a:hover {
-    color: var(--accent-sage);
-  }
-
-  main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px 24px 100px;
-  }
-
-  .hero {
-    text-align: center;
-    padding: 48px 20px 60px;
-  }
-
-  .hero-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--accent-sage-soft);
-    color: var(--accent-sage);
-    padding: 6px 16px;
-    border-radius: 100px;
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 24px;
-    border: 1px solid rgba(74, 96, 72, 0.15);
-  }
-
-  h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 52px;
-    line-height: 1.1;
-    margin: 0 0 16px;
-    font-weight: 700;
-    letter-spacing: -1px;
-  }
-
-  .hero-tagline {
-    font-size: 20px;
-    color: var(--ink-muted);
-    max-width: 600px;
-    margin: 0 auto 36px;
-    font-weight: 400;
-  }
-
-  .grid-two {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin: 40px 0;
-  }
-
-  @media (max-width: 768px) {
-    h1 { font-size: 38px; }
-    .grid-two { grid-template-columns: 1fr; }
-  }
-
+  main { max-width: 680px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 8px; font-weight: 600; }
+  .tagline { color: var(--ink-soft); font-style: italic; margin: 0 0 32px; }
+  h2 { font-size: 19px; margin: 40px 0 12px; font-weight: 600; }
+  p { margin: 0 0 14px; }
+  ul { padding-left: 20px; margin: 0 0 14px; }
+  li { margin-bottom: 8px; }
   .card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: var(--radius-lg);
-    padding: 36px;
-    box-shadow: var(--shadow-soft);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background: var(--card); border: 1px solid var(--hairline);
+    border-radius: 12px; padding: 20px 22px; margin: 24px 0;
   }
-
-  .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
-  }
-
-  .card-badge {
-    display: inline-block;
-    padding: 4px 12px;
-    border-radius: 6px;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 16px;
-  }
-
-  .badge-book { background: var(--accent-ochre-soft); color: var(--accent-ochre); }
-  .badge-app { background: var(--accent-sage-soft); color: var(--accent-sage); }
-
-  .card h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 30px;
-    margin: 0 0 12px;
-    font-weight: 700;
-  }
-
-  .card p {
-    color: var(--ink-muted);
-    margin: 0 0 20px;
-    font-size: 15px;
-  }
-
-  .card-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 24px;
-    padding-top: 16px;
-    border-top: 1px solid var(--hairline);
-  }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 24px;
-    border-radius: var(--radius-md);
-    font-weight: 600;
-    font-size: 14px;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    cursor: pointer;
-    border: none;
-  }
-
-  .btn-primary {
-    background: var(--accent-sage);
-    color: #FFFFFF;
-  }
-
-  .btn-primary:hover {
-    opacity: 0.92;
-  }
-
-  .btn-ochre {
-    background: var(--accent-ochre);
-    color: #FFFFFF;
-  }
-
-  .btn-ochre:hover {
-    opacity: 0.92;
-  }
-
-  .features-section {
-    margin: 60px 0;
-  }
-
-  .features-section h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 36px;
-    text-align: center;
-    margin-bottom: 40px;
-  }
-
-  .feature-item {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    margin-bottom: 24px;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    padding: 24px;
-    border-radius: var(--radius-md);
-  }
-
-  .feature-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
-    background: var(--accent-sage-soft);
-    color: var(--accent-sage);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .feature-text h3 {
-    margin: 0 0 6px;
-    font-size: 18px;
-    font-weight: 600;
-  }
-
-  .feature-text p {
-    margin: 0;
-    color: var(--ink-muted);
-    font-size: 14px;
-  }
-
-  /* Interactive Puzzle Teaser */
-  .preview-grid {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: var(--radius-lg);
-    padding: 32px;
-    margin: 60px 0;
-    text-align: center;
-  }
-
-  .preview-grid h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
-    margin: 0 0 8px;
-  }
-
-  .preview-grid p {
-    color: var(--ink-muted);
-    margin: 0 0 24px;
-    font-size: 15px;
-  }
-
-  .mini-grid {
-    display: inline-grid;
-    grid-template-columns: repeat(4, 54px);
-    gap: 6px;
-    margin-bottom: 16px;
-  }
-
-  .mini-cell {
-    width: 54px;
-    height: 54px;
-    border-radius: 8px;
-    background: var(--bg-paper);
-    border: 1px solid var(--card-border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 18px;
-    color: var(--accent-sage);
-  }
-
-  .mini-cell.x {
-    color: #C85A5A;
-  }
-
+  a { color: var(--accent); }
+  .muted { color: var(--ink-soft); font-size: 14px; }
   footer {
-    border-top: 1px solid var(--hairline);
-    padding-top: 40px;
-    margin-top: 80px;
-    color: var(--ink-muted);
-    font-size: 14px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
+    margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--hairline);
+    color: var(--ink-soft); font-size: 14px;
   }
-
-  footer a {
-    color: var(--accent-sage);
-    text-decoration: none;
-  }
-
-  footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
-
-<header>
-  <a href="#" class="brand-logo">
-    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="40" height="40" rx="12" fill="#4A6048"/>
-      <path d="M12 14H28M12 20H28M12 26H20" stroke="#F9F6F0" stroke-width="2.5" stroke-linecap="round"/>
-      <circle cx="26" cy="26" r="3" fill="#D49B4B"/>
-    </svg>
-    <span class="brand-name">CozyLogic</span>
-  </a>
-  <nav class="nav-links">
-    <a href="#books">Books</a>
-    <a href="#app">App</a>
-    <a href="#philosophy">Philosophy</a>
-    <a href="#support">Support</a>
-  </nav>
-</header>
-
 <main>
 
-  <section class="hero">
-    <div class="hero-pill">
-      <span>✦</span> Independent Cozy Logic Mysteries
-    </div>
-    <h1>Gentle whodunits on a logic grid.</h1>
-    <p class="hero-tagline">
-      Step into quiet English villages where nobody is hurt, everything is calm, and pure human logic solves every mystery.
-    </p>
-  </section>
+  <h1>Cozy Logic Grid Puzzles</h1>
+  <p class="tagline">Gentle whodunits on a logic grid. No ads, no timers, offline, never a guess.</p>
 
-  <section class="grid-two">
-    <!-- Books Card -->
-    <div class="card" id="books">
-      <span class="card-badge badge-book">On Paper</span>
-      <h2>Cozy Logic Press Books</h2>
-      <p>
-        Large print 8.5×11" volumes designed for quiet afternoons with a pencil and tea. Room to write, clear grid lines, and zero screen fatigue.
-      </p>
-      <div class="card-footer">
-        <span style="font-size: 14px; color: var(--ink-muted);">Volume 1: Thistledown</span>
-        <a href="#" class="btn btn-ochre">Explore Books</a>
-      </div>
-    </div>
+  <p>A quiet English village. A missing bake-off ribbon, a signed letter gone
+  from a bookshop, a clock tower key that never reached the ceremony. Nobody is
+  hurt, nothing is grim — but somebody was somewhere they should not have been,
+  and the grid knows who.</p>
 
-    <!-- App Card -->
-    <div class="card" id="app">
-      <span class="card-badge badge-app">On Mobile</span>
-      <h2>Cozy Logic App</h2>
-      <p>
-        Distraction-free mobile puzzles. Shipped complete, works 100% offline, zero ads, no subscription, and no permissions required.
-      </p>
-      <div class="card-footer">
-        <span style="font-size: 14px; color: var(--ink-muted);">Android & iOS</span>
-        <a href="#" class="btn btn-primary">Get the App</a>
-      </div>
-    </div>
-  </section>
+  <h2>Never a guess — and we mean it</h2>
 
-  <!-- Interactive Puzzle Teaser -->
-  <section class="preview-grid">
-    <h3>Tested by machine. Solved by you.</h3>
-    <p>Every single case is verified by solver engines before publication to guarantee zero forced guesses.</p>
-    <div class="mini-grid">
-      <div class="mini-cell">✓</div>
-      <div class="mini-cell x">✕</div>
-      <div class="mini-cell x">✕</div>
-      <div class="mini-cell">✓</div>
-    </div>
-    <p style="font-size: 13px; font-style: italic;">"The missing bake-off ribbon was never stolen — it was simply placed in the wrong pantry!"</p>
-  </section>
+  <p>Three things are checked by machine before a single case ships:</p>
+  <ul>
+    <li><strong>Exactly one solution.</strong> Not “we believe” — counted.</li>
+    <li><strong>Not one clue you do not need.</strong> Every clue is tested for
+    removal, and cut if the case survives without it.</li>
+    <li><strong>You never have to guess.</strong> A puzzle can have exactly one
+    answer and still be unreachable — you cross off everything the clues allow,
+    and stop, with no forced next move. A second solver, restricted on purpose
+    to what a person does with a pencil, has to finish every case before it is
+    allowed in. If it stalls, the case is not shipped.</li>
+  </ul>
 
-  <section class="features-section" id="philosophy">
-    <h2>The CozyLogic Promise</h2>
+  <h2>No ads. No timers. No internet.</h2>
 
-    <div class="feature-item">
-      <div class="feature-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-      </div>
-      <div class="feature-text">
-        <h3>Exactly One Solution</h3>
-        <p>No mathematical ambiguities. Every clue is essential and every case has a singular, elegant outcome.</p>
-      </div>
-    </div>
+  <p>There are no adverts and there will not be. Nothing is timed and nothing is
+  scored against you. The whole app works offline because every case is already
+  inside it, and it asks Android for no permissions at all.</p>
 
-    <div class="feature-item">
-      <div class="feature-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-      </div>
-      <div class="feature-text">
-        <h3>No Timers or Aggressive Mechanics</h3>
-        <p>Take as long as you like. There are no ticking clocks, health points, or penalties for taking a pause.</p>
-      </div>
-    </div>
+  <div class="card">
+    <h2 style="margin-top:0">On paper</h2>
+    <p>The largest grids never fit a phone comfortably — that is what the books
+    are for. Large print, room to write, no battery and no subscription.</p>
+    <p class="muted">Published by Blackwick Press.</p>
+  </div>
 
-    <div class="feature-item">
-      <div class="feature-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      </div>
-      <div class="feature-text">
-        <h3>Zero Ads & Complete Privacy</h3>
-        <p>The app collects no data, requires no internet connection, and never displays advertisements.</p>
-      </div>
-    </div>
-  </section>
+  <h2>Support</h2>
+  <p>Questions, or a case you think is wrong — we would want to know, and it
+  would be the first:</p>
+  <p><a href="mailto:missplay400@gmail.com">missplay400@gmail.com</a></p>
 
-  <footer id="support">
-    <div>
-      <strong>CozyLogic</strong> — Independent Cozy Logic Mysteries & Books
-    </div>
-    <div>
-      <a href="mailto:support@cozylogic.app">Contact Support</a> · 
-      <a href="privacy.html">Privacy Policy</a>
-    </div>
+  <h2>Privacy</h2>
+  <p>The app collects nothing at all.
+  <a href="privacy.html">Read the full privacy policy</a>.</p>
+
+  <footer>
+    Cozy Logic Grid Puzzles — Blackwick Press
   </footer>
 
 </main>
-
 </body>
 </html>
